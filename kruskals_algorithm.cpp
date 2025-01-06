@@ -25,8 +25,8 @@ class DisjointSet {
     }
 
     void unionByRank(int u, int v) {
-        int ulp_u = parent[u];          // ulp_u --> ultimate parent of u
-        int ulp_v = parent[v];          // ulp_v --> ultimate parent of v
+        int ulp_u = findParent(u);          // ulp_u --> ultimate parent of u
+        int ulp_v = findParent(v);          // ulp_v --> ultimate parent of v
 
         if(ulp_u == ulp_v) return;          // if parent of u and v are same, no need to perform unionByRank
         if(rank[ulp_u] < rank[ulp_v]) {     // if ulp_u has smaller rank than that of ulp_v
